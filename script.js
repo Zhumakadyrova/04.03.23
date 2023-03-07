@@ -72,3 +72,24 @@ info.addEventListener("keydown", function(event) {
     addItem
   } 
 })
+
+const news = document.querySelector("#info-blank");
+const active = document.querySelector("#activation");
+const liit = document.querySelector("#list-info");
+function removeItem () {
+  this.parentElement.remove();
+}
+function addItem () {
+  if (news.value.trim !== "") {
+    const liitElement = document.createElement("li");
+    liit.append(liitElement);
+    liitElement.textContent = news.value;
+    news.value = "";
+
+    const liiteRemove = document.createElement("button");
+    liiteRemove.textContent("Remove");
+    liitElement.append(liiteRemove);
+    liiteRemove.addEventListener("click", removeItem)
+  }
+}
+active.addEventListener("click", addItem);
