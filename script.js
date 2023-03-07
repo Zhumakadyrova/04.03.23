@@ -44,4 +44,31 @@ function addItem() {
     rmw.addEventListener("click", removeItem)
   }
 }
-inpButton.addEventListener("click", addItem)
+inpButton.addEventListener("click", addItem);
+
+const info = document.querySelector("#info");
+const btn = document.querySelector("#press");
+const item = document.querySelector("#list1");
+
+function removeItem () {
+  this.parentElement.remove()
+}
+function addItem () {
+  if (info.value.trim() !== "") {
+    const itmEl = document.createElement("li");
+    info.append(itmEl);
+    itmEl.textContent = info.value;
+    info.value = " ";
+
+    const eraze = document.createElement("button");
+    eraze.textContent = "Eraze";
+    itmEl.append(eraze);
+    eraze.addEventListener("click", removeItem)
+  } 
+}
+btn.addEventListener("click", addItem);
+info.addEventListener("keydown", function(event) {
+  if (event.code === "Enter") {
+    addItem
+  } 
+})
