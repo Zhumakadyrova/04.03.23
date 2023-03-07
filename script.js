@@ -93,3 +93,54 @@ function addItem () {
   }
 }
 active.addEventListener("click", addItem);
+
+const example2 = [
+  {name: "Bakyt", age: 18},
+  {name: "Nagima", age:21}
+]
+const exampleList2 = [
+  { name: "bakyt", age: 18 },
+  { name: "dosbol", age: 32 },
+];
+const ul1 = document.createElement("ul");
+document.body.append(ul1);
+for (i = 0; i < exampleList2.length; i++) {
+  const list1 = document.createElement("li");
+  ul1.append(list1);
+  list1.textContent = exampleList2[i].name + " - " + exampleList2[i].age;
+}
+const card = [
+  {
+    title: "Michael",
+    description:
+      "Michael works as a programmer at Google. He has been working there for 7 years. Likes gingerbread.",
+    url: "Р",
+  },
+  {
+    title: "Howard",
+    description:
+      "Howard works as a programmer at Google. He has been working there for 5 years. Likes to play Starcraft",
+    url: "https://bugaga.ru/uploads/posts/2019-10/1569918345_lica-1.jpg",
+  },
+  {
+    title: "Emma",
+    description:
+      "Emma works as a programmer at Amazoon. He has been working there for 2 years. likes to go shopping",
+    url: "picture2.jpg",
+  },
+  {
+    title: "Diana",
+    description:
+      "Diana works as a programmer at Yandex. He has been working there for 9 years. likes to make cakes",
+    url: "https://zachiska.com/wp-content/uploads/2019/12/73414958_2429105324085170_2500640154078220638_n.jpg",
+  },
+]
+const card1 = document.createElement("card");
+document.body.append(card1);
+for(i=0; i< card.length; i++) {
+  const cardText = document.createElement("card-text");
+  card1.append(cardText);
+  cardText.textContent = card[i].url + " " + card[i].title + " " + card[i].description;
+  card1.style.display = "flex";
+
+}
