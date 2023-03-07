@@ -114,7 +114,7 @@ const card = [
     title: "Michael",
     description:
       "Michael works as a programmer at Google. He has been working there for 7 years. Likes gingerbread.",
-    url: "Р",
+    url: "https://bugaga.ru/uploads/posts/2019-10/1569918345_lica-1.jpg",
   },
   {
     title: "Howard",
@@ -126,12 +126,12 @@ const card = [
     title: "Emma",
     description:
       "Emma works as a programmer at Amazoon. He has been working there for 2 years. likes to go shopping",
-    url: "picture2.jpg",
+    url: "https://bugaga.ru/uploads/posts/2019-10/1569918345_lica-1.jpg",
   },
   {
-    title: "Diana",
+    title: 15,
     description:
-      "Diana works as a programmer at Yandex. He has been working there for 9 years. likes to make cakes",
+15646468,
     url: "https://zachiska.com/wp-content/uploads/2019/12/73414958_2429105324085170_2500640154078220638_n.jpg",
   },
 ]
@@ -140,7 +140,30 @@ document.body.append(card1);
 for(i=0; i< card.length; i++) {
   const cardText = document.createElement("card-text");
   card1.append(cardText);
-  cardText.textContent = card[i].url + " " + card[i].title + " " + card[i].description;
-  card1.style.display = "flex";
-
+  const cardik = card[i];
+  const div = document.createElement("div");
+  const h3 = document.createElement("h3");
+  const p = document.createElement("p");
+  const img = document.createElement("img");
+  h3.textContent = cardik.title;
+  p.textContent = cardik.description;
+  img.src = cardik.url;
+  div.appendChild(h3);
+  div.appendChild(p);
+  div.appendChild(img);
+  document.body.append(div);
+  if ((typeof cardik.title) === 'string') {
+    div.append(h3);
+  }
+  else{
+    h3.textContent = "wrong command"
+    div.append(h3);
+  }
+  if ((typeof cardik.description) === "string") {
+    div.append(p);
+  }
+  else { 
+    p.textContent = "Wrong Comand"
+    div.append(p);
+  }
 }
